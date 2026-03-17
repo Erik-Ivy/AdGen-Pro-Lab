@@ -13,7 +13,12 @@ export const setGeminiConfig = (config: Partial<typeof runtimeConfig>) => {
     runtimeConfig = { ...runtimeConfig, ...config };
 };
 
-export const getApiKey = () => runtimeConfig.API_KEY || runtimeConfig.GEMINI_API_KEY || runtimeConfig.GOOGLE_API_KEY;
+export const getApiKey = () =>
+    runtimeConfig.API_KEY ||
+    runtimeConfig.GEMINI_API_KEY ||
+    runtimeConfig.GOOGLE_API_KEY ||
+    (import.meta.env.VITE_GEMINI_API_KEY as string) ||
+    '';
 const getVeoModel = () => runtimeConfig.VEO_MODEL_NAME || 'veo-3.1-fast-generate-preview';
 
 const fileToBase64 = (file: File): Promise<string> => {
@@ -233,7 +238,7 @@ export const regenerateSceneVisuals = async (
 ): Promise<any[]> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     const prompt = `
     You are a professional Video Director.
@@ -292,7 +297,7 @@ export const generateCreativeBlueprints = async (
 ): Promise<CreativeBlueprint[]> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     onProgress("Optimizing video assets for analysis...");
     const assetParts: any[] = [];
@@ -405,7 +410,7 @@ export const generateAvatarAnalysis = async (
 ): Promise<AvatarAnalysis> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     onProgress("Scanning video narrative for persona traits...");
     const assetParts: any[] = [];
@@ -488,7 +493,7 @@ export const generateVisualsFromBlueprint = async (
 ): Promise<AdVariation> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     const isLandingPage = type === FileType.LANDING_PAGE_ANALYSIS;
     onProgress(`Rendering ${isLandingPage ? 'Direct-Response Page' : 'Concept'} for: ${blueprint.title}`);
@@ -575,7 +580,7 @@ export const generateVisualsFromBlueprint = async (
 const adaptScriptForVeo = async (variation: VideoAdVariation, onProgress: (p: string) => void): Promise<string> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     onProgress("Optimizing script for 8-second video generation...");
 
@@ -633,7 +638,7 @@ export const generateVideoFromScript = async (
 ): Promise<string> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
 
     const adaptedJson = await adaptScriptForVeo(variation, onProgress);
     
@@ -671,7 +676,7 @@ export const generateVideoFromScript = async (
 const analyzeVideoContent = async (files: File[], onProgress: (p: string) => void): Promise<string> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     const parts: any[] = [];
     let hasVideo = false;
@@ -734,7 +739,7 @@ export const generateAdVariations = async (
 ): Promise<AdVariation[]> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     const similarityInstruction = similarityLevel > 70 
       ? "Completely reimagine the style and composition while keeping the core subject. Radically evolve the context." 
@@ -1005,7 +1010,7 @@ export const generateVideoFromJSON = async (
 ): Promise<string> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("Gemini API key not set. Please add GOOGLE_API_KEY or GEMINI_API_KEY to your Secrets or select a key.");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
     
     // Check if API key is selected for paid models
     if (typeof window !== 'undefined' && (window as any).aistudio?.hasSelectedApiKey) {
@@ -1063,7 +1068,7 @@ export const animateImage = async (
 ): Promise<string> => {
     const apiKey = getApiKey();
     if (!apiKey) throw new Error("API_KEY not set");
-    const ai = new GoogleGenAI({ apiKey, baseUrl: window.location.origin + "/api-proxy" } as any);
+    const ai = new GoogleGenAI({ apiKey });
 
     // Check if API key is selected for paid models
     if (typeof window !== 'undefined' && (window as any).aistudio?.hasSelectedApiKey) {
