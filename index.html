@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Ad Variation Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#4f46e5',
+              'brand-secondary': '#3730a3',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'slide-in-up': 'slideInUp 0.5s ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideInUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f8fafc; /* slate-50 */
+        background-image: 
+          /* Subtle warm glow for light theme */
+          radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+          /* Grid pattern */
+          linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+        background-position: 0 0, 0 0, 0 0, 0 0;
+        background-attachment: fixed;
+      }
+    </style>
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+        signOut,
+        onAuthStateChanged
+      } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBddifVMEM1VLAqS_qgfnE6wXQk3ajlUOI",
+        authDomain: "ai-ad-generator-4097f.firebaseapp.com",
+        projectId: "ai-ad-generator-4097f",
+        storageBucket: "ai-ad-generator-4097f.firebasestorage.app",
+        messagingSenderId: "210995191554",
+        appId: "1:210995191554:web:a4e53998a59ec63181ec1b"
+      };
+
+      const firebaseApp = initializeApp(firebaseConfig);
+      const auth = getAuth(firebaseApp);
+
+      // Global state to handle race conditions with React mounting
+      window.firebaseAuthState = {
+        user: undefined,
+        initialized: false
+      };
+
+      // --- AUTH FUNCTIONS ---
+      async function login(email, password) {
+        try {
+          await signInWithEmailAndPassword(auth, email, password);
+          return { ok: true };
+        } catch (err) {
+          return { ok: false, error: err.message };
+        }
+      }
+
+      async function logout() {
+        await signOut(auth);
+      }
+
+      // Attach to window to allow React components to access these functions
+      window.firebaseAuth = { login, logout, auth };
+
+      // --- AUTH STATE GATE ---
+      onAuthStateChanged(auth, (user) => {
+        window.firebaseAuthState.user = user;
+        window.firebaseAuthState.initialized = true;
+        // Use a custom event to notify the React application of auth changes
+        const event = new CustomEvent('firebase-auth-change', { detail: { user } });
+        window.dispatchEvent(event);
+      });
+    </script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-slate-900 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

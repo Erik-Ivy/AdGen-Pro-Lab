@@ -1,0 +1,15 @@
+{
+  "name": "AdGen Pro Lab",
+  "description": "Upload a video or image ad and have the app create 10 creative variations of that ad that are likely to increase the click rate.",
+  "requestFramePermissions": [],
+  "requirements": [
+    {
+      "type": "API_KEY",
+      "dialog": {
+        "title": "API Key Required",
+        "message": "This tool uses Google\u0027s advanced Gemini 1.5 Pro or Gemini 3 Pro models for video analysis and requires a valid API key.\n\n**To connect your key:**\n1. In the pop-up, select a Google Cloud project with billing enabled.\n2. Ensure the **Vertex AI API** is enabled for your selected project.\n3. Choose an existing API key or create a new one to proceed.",
+        "learnMoreLink": "https://ai.google.dev/gemini-api/docs/billing"
+      }
+    }
+  ]
+}
