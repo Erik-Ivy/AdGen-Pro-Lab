@@ -231,3 +231,141 @@ platforms' proven format (screen-capture proof, native UGC pain-hook, and
 loss-aversion testimonial) with the lowest production cost and the clearest
 tie to start.dev's actual, already-built product surface (courses, AI chat,
 gamification).
+
+---
+
+## 4. Batch 2 — 15 more concepts
+
+Second pass, deliberately non-overlapping with Batch 1: different audience
+segments (career-switchers, non-technical creators, parents, freelancers),
+different psychological levers (imposter syndrome, competition, timing/
+seasonality, referral), and course-specific spotlights instead of
+platform-level pitches.
+
+### Meta (static / carousel)
+
+**16. Career-Switcher Static**
+- *Angle:* Speak directly to the 30-something leaving a non-tech job, not the CS-adjacent teenager.
+- *Psychology:* Specificity + identity match — names the exact audience so they self-select.
+- *Visual Hook:* Split frame — left: a name-tag/uniform or office badge fading out; right: the start.dev workspace with a FastAPI project mid-build.
+- *Copy:* "You don't need to go back to school to change careers. You need to build 6 real things." 
+- *CTA:* See the Path for Career-Switchers
+- *Bucket:* Gain Confidence
+
+**17. Imposter Syndrome Callout**
+- *Angle:* Name the fear directly instead of avoiding it — "am I even smart enough for this" is the actual internal monologue holding back the audience.
+- *Psychology:* Schwartz Problem-Aware — meet them at the fear, not the feature.
+- *Visual Hook:* Plain text on black: "what if I'm not smart enough to learn to code" — then cut to the AI chat calmly explaining a concept line-by-line.
+- *Copy:* "You're not bad at coding. You're bad at learning from tutorials that don't answer back." 
+- *CTA:* Get an AI That Actually Explains
+- *Bucket:* Avoid Pain
+
+**18. Course-Spotlight Static (TanStack Start)**
+- *Angle:* Target developers who already know JS and are shopping for the *next* modern-stack skill, not total beginners.
+- *Psychology:* Sophistication Stage 4-5 — audience is skeptical of "learn to code" claims but responsive to specific, current tech.
+- *Visual Hook:* Clean screenshot of the TanStack Start course thumbnail with the file-based routing code visible.
+- *Copy:* "Everyone's still teaching React Router. This is the stack teams are actually shipping in 2026." 
+- *CTA:* Take the TanStack Course
+- *Bucket:* Status/Envy
+
+**19. Freelancer/Side-Income Static**
+- *Angle:* Position real, shippable projects as portfolio pieces that lead to freelance income, not just learning.
+- *Psychology:* Cashvertising comfortable-living driver — money, not abstract "skills."
+- *Visual Hook:* A finished Tailwind landing page project screenshot with a mock "$450 — client project" invoice overlay.
+- *Copy:* "Your course project could be your first freelance invoice. Same code, different client." 
+- *CTA:* Build a Portfolio-Ready Project
+- *Bucket:* Convenience/Peace (income) 
+
+### Meta (video)
+
+**20. Leaderboard/Competition Hook**
+- *Angle:* Make learning feel like a competitive game against friends, not a solo grind.
+- *Psychology:* Cialdini social proof + status — visible rank vs. peers.
+- *Visual Hook:* Screen recording of an XP/level bar overtaking a friend's on a shared leaderboard UI, with a little "passed Jordan" toast notification.
+- *Copy:* "Turns out I'm more consistent when there's a leaderboard involved." 
+- *CTA:* Challenge a Friend
+- *Bucket:* Status/Envy
+
+**21. Parent-Angle Testimonial**
+- *Angle:* Parents searching for something real (not a subscription babysitter) for a teenager who wants to learn to code.
+- *Psychology:* Whitman "protection of loved ones" driver.
+- *Visual Hook:* A parent talking to camera in a kitchen, laptop open showing their kid's actual finished project.
+- *Copy:* "My son actually built something instead of just watching videos for six months. That's the difference." 
+- *CTA:* Find the Right Course for Your Teen
+- *Bucket:* Love/Belonging
+
+**22. "AI Won't Replace You If You Can Build" Reframe**
+- *Angle:* Address AI-anxiety directly — position learning to build as the antidote to AI job fear, not a thing AI made obsolete.
+- *Psychology:* Avoid Pain (career-threat fear) reframed into Gain Confidence.
+- *Visual Hook:* News-style AI-job-loss headlines fading out, replaced by a build-in-progress screen recording with an AI mentor assisting, not replacing.
+- *Copy:* "AI isn't replacing developers. It's replacing developers who never learned to build with it." 
+- *CTA:* Learn to Build With AI, Not Against It
+- *Bucket:* Avoid Pain
+
+### TikTok (UGC / native)
+
+**23. Weekend Build Challenge**
+- *Angle:* "I built a real app in one weekend" time-boxed challenge format, a proven TikTok genre (cooking/DIY) applied to code.
+- *Psychology:* Curiosity gap + concrete timeframe.
+- *Visual Hook:* On-screen timer "Saturday 9am" ticking through a montage to "Sunday 6pm — done", ending on a working app demo.
+- *Copy (caption):* "I gave myself one weekend to build a real project on start.dev. No shortcuts." 
+- *CTA:* Try the Weekend Challenge Yourself
+- *Bucket:* Gain Confidence
+
+**24. Non-Coder Reaction Duet-Bait**
+- *Angle:* Film a non-technical creator (marketer, designer) reacting to how far they got in 10 minutes — appeals to adjacent audiences who don't identify as "coders" yet.
+- *Psychology:* Relatability — someone who looks like the viewer, not an already-technical person.
+- *Visual Hook:* Designer-coded creator, visibly surprised, screen-recording their first working CSS layout.
+- *Copy:* "I'm a designer, not a developer, and I just shipped my first real page in 10 minutes." 
+- *CTA:* See How Easy the First Lesson Is
+- *Bucket:* Gain Confidence
+
+**25. "Things Nobody Tells You Before Learning to Code" List Format**
+- *Angle:* Listicle-style native format that's inherently shareable and doesn't feel like an ad until the last beat.
+- *Psychology:* Curiosity + information-gap across a numbered list.
+- *Visual Hook:* Fast jump-cuts, bold on-screen numbers "1. 2. 3." with a different B-roll of the product per point.
+- *Copy:* "1. Tutorials lie to you. 2. You'll build nothing real for months. 3. ...unless the AI mentor actually reads your code." 
+- *CTA:* Skip the Tutorial Hell Part
+- *Bucket:* Avoid Pain
+
+**26. Referral/"Learn With Me" Duo Format**
+- *Angle:* Two creators learning together on camera, tapping into accountability-partner and challenge-a-friend social dynamics.
+- *Psychology:* Love/Belonging + Commitment (public accountability).
+- *Visual Hook:* Two friends split-screen, both mid-lesson, racing to finish the same project first.
+- *Copy:* "We made a pact to finish one course a month. Losers buy coffee." 
+- *CTA:* Start a Course With a Friend
+- *Bucket:* Love/Belonging
+
+### YouTube (pre-roll / mid-roll)
+
+**27. Ariel Weinberger Course-Spotlight Sponsor Read**
+- *Angle:* Mirror concept #13 but for the second named instructor, spotlighting a different course (CSS Basics) to diversify creative and avoid ad fatigue on a single face.
+- *Psychology:* Authority transfer from an established teaching voice.
+- *Visual Hook:* Ariel mid-lesson pauses to show his own CSS Basics course landing page inside start.dev.
+- *Copy:* "This is the actual course I teach on start.dev — same lessons, real projects, not clips." 
+- *CTA:* Take His CSS Course Free
+- *Bucket:* Gain Confidence
+
+**28. New Year / Q1 Resolution Timing Pre-Roll**
+- *Angle:* Ride the seasonal "learn a new skill this year" search and resolution spike instead of competing on a generic evergreen pitch.
+- *Psychology:* Timing-driven urgency — audience is already primed to act, ad just needs to be the easiest yes.
+- *Visual Hook:* Calendar flipping to a new year/quarter, cut immediately to a screen recording of lesson 1 starting.
+- *Copy:* "Everyone says 'learn to code' as a resolution. Almost nobody finishes month one. Here's the difference." 
+- *CTA:* Start This Year Differently — Get Early Access
+- *Bucket:* Gain Confidence
+
+**29. Long-Form Mid-Roll: The Unique Mechanism Explainer**
+- *Angle:* For channels with a more technical, skeptical audience, spend a full 45-60s explaining *why* the AI-grounded-in-your-code mechanism is architecturally different from pasting errors into ChatGPT.
+- *Psychology:* Sophistication Stage 5 audience — needs the Reason Why spelled out, not just implied.
+- *Visual Hook:* Side-by-side: generic chatbot given a vague copy-pasted error vs. start.dev's AI reading the actual file, test, and console output in context.
+- *Copy:* "The AI isn't guessing from a pasted error message. It's already looking at your file, your test, and your output." 
+- *CTA:* See How the AI Mentor Works
+- *Bucket:* Convenience/Peace
+
+**30. Review/Rating Social Proof Pre-Roll**
+- *Angle:* Lead with aggregated learner sentiment instead of a single testimonial, for audiences who trust numbers over anecdotes.
+- *Psychology:* Cialdini social proof at scale (the "everyone else already decided" shortcut).
+- *Visual Hook:* Screen recording scrolling through real course ratings/comments, landing on one specific glowing one held on-screen for readability.
+- *Copy:* "Real learners rated this course before we ever ran an ad for it." 
+- *CTA:* Read the Reviews — Get Early Access
+- *Bucket:* Convenience/Peace
